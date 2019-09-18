@@ -27,55 +27,55 @@ export default class CogerAjax extends Component {
 }
 
 
-class DiskoComponent{
-    constructor( ){
-    this.grupo = ''
-    this.disko = ''
-    this.precio = ''
+class DiskoComponent {
+    constructor() {
+        this.grupo = ''
+        this.disko = ''
+        this.precio = ''
     }
-    }
-    
-    
-    
-    export class Diskos extends React.Component {
+}
+
+
+
+export class Diskos extends React.Component {
     state = {
-    datos: new DiskoComponent()
+        datos: new DiskoComponent()
     }
-    rendergrupo(){
-    return <input
-    title="Introduce el grupo"
-    className="form-control"
-    placeholder="Grupo"
-    onChange = {(c) => {this.setState ({datos: {...this.state.datos, grupo: c.target.value}}) }} />
+    rendergrupo() {
+        return <input
+            title="Introduce el grupo"
+            className="form-control"
+            placeholder="Grupo"
+            onChange={(c) => { this.setState({ datos: { ...this.state.datos, grupo: c.target.value } }) }} />
     }
-    renderdisko(){
+    renderdisko() {
         return <input
-        title="Introduce el disko"
-        className="form-control"
-        placeholder="Disko"
-        onChange = {(c) => {this.setState ({datos: {...this.state.datos, disko: c.target.value}}) }} />
-        }
+            title="Introduce el disko"
+            className="form-control"
+            placeholder="Disko"
+            onChange={(c) => { this.setState({ datos: { ...this.state.datos, disko: c.target.value } }) }} />
+    }
 
-    renderprecio(){
+    renderprecio() {
         return <input
-        title="Introduce el precio"
-        className="form-control"
-        placeholder="Precio"
-        onChange = {(c) => {this.setState ({datos: {...this.state.datos, precio: c.target.value}}) }} />
-        }   
+            title="Introduce el precio"
+            className="form-control"
+            placeholder="Precio"
+            onChange={(c) => { this.setState({ datos: { ...this.state.datos, precio: c.target.value } }) }} />
+    }
 
-        
+
 
     render() {
-    
-    return (
-    <div>
-    {this.rendergrupo()}
-    {this.renderdisko()}
-    
-    {JSON.stringify(this.state)}
-    </div>
-    )
-    
+
+        return (
+            <div>
+                {this.rendergrupo()}
+                {this.renderdisko()}
+                {this.renderprecio()}
+                {JSON.stringify(this.state)}
+            </div>
+        )
+
     }
-    }
+}
