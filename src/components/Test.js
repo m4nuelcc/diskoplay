@@ -63,6 +63,13 @@ export class Diskos extends React.Component {
             placeholder="Precio"
             onChange={(c) => { this.setState({ datos: { ...this.state.datos, precio: c.target.value } }) }} />
     }
+    grabar = () =>{ 
+        fetch('http://localhost:3000/manuel/diskoplay', {
+            method:'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify(this.state.datos)
+        }).then().then()
+    }
 
 
 
@@ -74,8 +81,15 @@ export class Diskos extends React.Component {
                 {this.renderdisko()}
                 {this.renderprecio()}
                 {JSON.stringify(this.state)}
+                <button onClick={this.grabar}>Grabar</button>
+
+                    <pre>
+                    {JSON.stringify(this.state)}
+
+                    </pre>
             </div>
         )
 
     }
 }
+
