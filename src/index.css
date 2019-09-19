@@ -44,3 +44,129 @@ i.material-icons{
     padding: 5px;
     box-shadow: 0px 0px;
     }
+    .modal2 {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; 
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); 
+        /* Black w/ opacity */
+      }
+      
+      /* Modal Content/Box */
+      .modal2-content {
+        background-color: #fefefe; 
+        margin: 5% auto;  
+        padding: 20px;
+        border: 2px solid #888;
+        
+        width: 80%;  
+      }
+
+      /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+      .menu-item {
+        padding: 20px;
+        width: 25%;
+        float: left;
+      }
+      
+      .cpointer {
+        cursor: pointer;
+      }
+      
+      .barra {
+        background-color: rgb(219, 241, 215);
+        color: green;
+        border: 1px solid;    
+        margin: 15px 15px 15px 15px;
+        /* width: 99%; */
+        
+      
+      }
+      
+      .menu {
+        /* color: white; */
+        
+        padding-left: 50px;
+      }
+      
+      .btn-round {
+        border-radius: 15%;
+      }
+      
+      i.material-icons {
+        font-size: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+        /* border: 1px solid; */
+        padding: 5px;
+        box-shadow: 2px 2px ;
+      }
+      
+      i.material-icons:hover {
+        font-size: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 1px solid;
+        padding: 5px;
+        box-shadow: 0px 0px ; 
+      
+      }
+      
+      .circle {
+        color: green;
+        font-size: 15px;  
+        border-radius: 25%;
+        /* cursor: pointer; */
+        border: 2px solid;
+        padding: 3px;
+        /* box-shadow: 2px 2px rgb(102, 126, 108); */
+      }
+      
+      .tachado {text-decoration:line-through;} 
+      
+      .nombre-alumno {
+        font-size: 20px;
+        color: black;
+        text-shadow: 3px 3px #b6babb;
+      }
+      
+      
+      .nombre-alumno-lista {
+        font-size: 18px;  
+        color: black;
+        /* text-shadow: 2px 2px #b6babb; */
+      }
+      
+      .nombre-alumno-lista:hover {
+        color: black;
+        text-decoration: none;  /* porque llevan enlace de React <Link> para que no se vea azul*/
+      }
+      
+      .titulo-post-lista {
+        font-size: 20px;
+        color: black;
+        text-shadow: 2px 2px #b6babb;
+      }
+      
+      .bolo {
+        border-radius: 1%;
+        background: rgba(132,177,251,1);
+        background: -moz-linear-gradient(-45deg, rgba(132,177,251,1) 0%, rgba(185,210,249,1) 31%, rgba(88,155,249,1) 51%, rgba(102,161,245,1) 71%, rgba(113,170,239,1) 100%);
+        background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(132,177,251,1)), color-stop(31%, rgba(185,210,249,1)), color-stop(51%, rgba(88,155,249,1)), color-stop(71%, rgba(102,161,245,1)), color-stop(100%, rgba(113,170,239,1)));
+        background: -webkit-linear-gradient(-45deg, rgba(132,177,251,1) 0%, rgba(185,210,249,1) 31%, rgba(88,155,249,1) 51%, rgba(102,161,245,1) 71%, rgba(113,170,239,1) 100%);
+        background: -o-linear-gradient(-45deg, rgba(132,177,251,1) 0%, rgba(185,210,249,1) 31%, rgba(88,155,249,1) 51%, rgba(102,161,245,1) 71%, rgba(113,170,239,1) 100%);
+        background: -ms-linear-gradient(-45deg, rgba(132,177,251,1) 0%, rgba(185,210,249,1) 31%, rgba(88,155,249,1) 51%, rgba(102,161,245,1) 71%, rgba(113,170,239,1) 100%);
+        background: linear-gradient(135deg, rgba(132,177,251,1) 0%, rgba(185,210,249,1) 31%, rgba(88,155,249,1) 51%, rgba(102,161,245,1) 71%, rgba(113,170,239,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84b1fb', endColorstr='#71aaef', GradientType=1 );
+        
+      }
+      
+      

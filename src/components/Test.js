@@ -71,22 +71,33 @@ export class Diskos extends React.Component {
         }).then().then()
     }
 
-
+    componentDidMount(){
+        window.onclick=(event) => {
+        if (event.target === document.getElementById('mimodal')) {
+        document.getElementById('mimodal').style.display='none'
+        }
+        }}
 
     render() {
 
         return (
             <div>
-                {this.rendergrupo()}
-                {this.renderdisko()}
-                {this.renderprecio()}
-                {JSON.stringify(this.state)}
-                <button onClick={this.grabar}>Grabar</button>
+                <span onClick={e => { document.getElementById('mimodal').style = 'display: block' }}>abrir</span>
+                <div id='mimodal' className='modal2'>
+                    <div className='modal2-content'>
+                        {this.rendergrupo()}
+                        {this.renderdisko()}
+                        {this.renderprecio()}
+                        {JSON.stringify(this.state)}
+                        <br/>
+                        <button onClick={this.grabar}>Grabar</button>
 
-                    <pre>
-                    {JSON.stringify(this.state)}
+                        <pre>
+                            {JSON.stringify(this.state)}
 
-                    </pre>
+                        </pre>
+                    </div>
+                </div>
             </div>
         )
 
