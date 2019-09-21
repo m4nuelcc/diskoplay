@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {ajaxGet } from '../index'
+import{mongo, br,nbsp} from '../index'
 
 
 
@@ -11,6 +12,7 @@ export default class CogerAjax extends Component {
        ajaxGet('http://localhost:3000/manuel/diskoplay', (diskos) => {
            console.log(diskos)
            this.setState({datos:diskos}) 
+           //this.state.datos
         })
     }
     render() {
@@ -41,14 +43,22 @@ export class Diskos extends React.Component {
     state = {
         datos: new DiskoComponent()
     }
-    rendergrupo() {
+    
+
+    // componentDidMount(){
+
+    //     mongo.db('diskoplay').collection('diskos').insertOne({grupo: 'rammtein', disco: 'du hast', precio: '35'})
+    //     // db.diskos.insertOne({grupo: 'rammtein', disco: 'du hast', precio: '35'})
+    //     mongo.db('diskoplay').collection('diskos').find().toArray().then( d => console.log(d))
+    // }
+    rendergrupo =() => {
         return <input
             title="Introduce el grupo"
             className="form-control"
             placeholder="Grupo"
             onChange={(c) => { this.setState({ datos: { ...this.state.datos, grupo: c.target.value } }) }} />
     }
-    renderdisko() {
+    renderdisko = () => {
         return <input
             title="Introduce el disko"
             className="form-control"
@@ -56,27 +66,35 @@ export class Diskos extends React.Component {
             onChange={(c) => { this.setState({ datos: { ...this.state.datos, disko: c.target.value } }) }} />
     }
 
-    renderprecio() {
+    renderprecio = () => {
         return <input
             title="Introduce el precio"
             className="form-control"
             placeholder="Precio"
             onChange={(c) => { this.setState({ datos: { ...this.state.datos, precio: c.target.value } }) }} />
     }
-    grabar = () =>{ 
-        fetch('http://localhost:3000/manuel/diskoplay', {
-            method:'POST',
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-            body: JSON.stringify(this.state.datos)
-        }).then().then()
+
+    grabar = () => {
+        mongo.db('diskoplay').collection('diskos').insertOne( this.state.datos )
+        // db.diskos.insertOne({grupo: 'rammtein', disco: 'du hast', precio: '35'})
+        mongo.db('diskoplay').collection('diskos').find().toArray().then(d => console.log(d))
     }
 
-    componentDidMount(){
-        window.onclick=(event) => {
-        if (event.target === document.getElementById('mimodal')) {
-        document.getElementById('mimodal').style.display='none'
-        }
-        }}
+    // grabar = () =>{ 
+    //     fetch('http://localhost:3000/manuel/diskoplay', {
+    //         method:'POST',
+    //         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    //         body: JSON.stringify(this.state.datos)
+    //     }).then().then()
+    // }
+
+componentDidMount2(){
+window.onclick=(event) => {
+if (event.target === document.getElementById('mimodal')) {
+document.getElementById('mimodal').style.display='none'
+}
+}}
+
 
     render() {
 
